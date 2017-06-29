@@ -39,14 +39,15 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnEncrypt = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEncFile = new System.Windows.Forms.TextBox();
+            this.txtEncDest = new System.Windows.Forms.TextBox();
+            this.txtDecFile = new System.Windows.Forms.TextBox();
+            this.txtDecDest = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Back
@@ -136,6 +137,7 @@
             this.btnEncrypt.TabIndex = 9;
             this.btnEncrypt.Text = "Encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = true;
+            this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
             // 
             // btnDecrypt
             // 
@@ -145,34 +147,35 @@
             this.btnDecrypt.TabIndex = 10;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
-            // textBox1
+            // txtEncFile
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 71);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(387, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtEncFile.Location = new System.Drawing.Point(132, 71);
+            this.txtEncFile.Name = "txtEncFile";
+            this.txtEncFile.Size = new System.Drawing.Size(387, 20);
+            this.txtEncFile.TabIndex = 11;
             // 
-            // textBox2
+            // txtEncDest
             // 
-            this.textBox2.Location = new System.Drawing.Point(132, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(387, 20);
-            this.textBox2.TabIndex = 12;
+            this.txtEncDest.Location = new System.Drawing.Point(132, 98);
+            this.txtEncDest.Name = "txtEncDest";
+            this.txtEncDest.Size = new System.Drawing.Size(387, 20);
+            this.txtEncDest.TabIndex = 12;
             // 
-            // textBox3
+            // txtDecFile
             // 
-            this.textBox3.Location = new System.Drawing.Point(132, 124);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(387, 20);
-            this.textBox3.TabIndex = 13;
+            this.txtDecFile.Location = new System.Drawing.Point(132, 124);
+            this.txtDecFile.Name = "txtDecFile";
+            this.txtDecFile.Size = new System.Drawing.Size(387, 20);
+            this.txtDecFile.TabIndex = 13;
             // 
-            // textBox4
+            // txtDecDest
             // 
-            this.textBox4.Location = new System.Drawing.Point(132, 150);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(387, 20);
-            this.textBox4.TabIndex = 14;
+            this.txtDecDest.Location = new System.Drawing.Point(132, 150);
+            this.txtDecDest.Name = "txtDecDest";
+            this.txtDecDest.Size = new System.Drawing.Size(387, 20);
+            this.txtDecDest.TabIndex = 14;
             // 
             // label2
             // 
@@ -210,19 +213,31 @@
             this.label5.TabIndex = 18;
             this.label5.Text = "Selected destination";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(396, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(123, 20);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Sanity Archive";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 486);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtDecDest);
+            this.Controls.Add(this.txtDecFile);
+            this.Controls.Add(this.txtEncDest);
+            this.Controls.Add(this.txtEncFile);
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.btnEncrypt);
             this.Controls.Add(this.checkBox1);
@@ -253,14 +268,15 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnEncrypt;
         private System.Windows.Forms.Button btnDecrypt;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEncFile;
+        private System.Windows.Forms.TextBox txtEncDest;
+        private System.Windows.Forms.TextBox txtDecFile;
+        private System.Windows.Forms.TextBox txtDecDest;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
